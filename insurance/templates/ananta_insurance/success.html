@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Success{% endblock title %}
+ {% block body %}
+      <main>
+            <div class="py-5">
+            <div class="container">
+                <div class="gif align-items-center d-block text-center p-5">
+                    {% load static %}
+                    {% comment %} <img src="{% static 'ananta_insurance/navbar-logo.png' %}" alt="" srcset=""> {% endcomment %}
+                    <i class="fa-regular fa-circle-check fa-8x fa-beat text-primary"></i>
+                </div>
+            <div class="d-block align-items-center text-center justify-content-center justify-content-between py-5 display-3 border-top border-bottom">
+           Insurance Claim Form submitted successfully.</div>
+    
+        </main>
+{% endblock body %}

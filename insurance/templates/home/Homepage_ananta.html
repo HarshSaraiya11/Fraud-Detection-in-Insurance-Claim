@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block homeActive %}link-light active {% endblock homeActive %}
+{% block body %}
+<main>
+  <div class="pb-5">
+    {% load static %}
+    <div class="position-relative">
+      <img src="{% static 'home/banner.jpg' %}" alt=" banner" class="w-100">
+      <div class="position-absolute top-50 end-50 ms-5 translate-middle-y">
+        <div class="display-3 fw-light mb-2">Ananta Insurance</div>
+        <p class="fs-3 lead">Tension, while you drive, can get over. Because we give you an interesting insurance cover.</p>
+      </div>
+    </div>
+    <div class="container py-5 ">
+      <!-- <div class="richtext parbase section">
+        <h2>
+          <b><span class="blue-title-unique">What is an insurance claim?</span></b>
+        </h2>
+        <p>
+          <span class="txt">An insurance claim is a formal request to your insurance provider for reimbursement against
+            losses
+            covered under your insurance policy.</span>
+        </p>
+        <p>
+          <span class="txt">Insurance is a financial agreement between you and your insurer. You have to pay a fixed
+            premium. And
+            in exchange, the <a href="/insurance.html" target="_blank">insurance</a> provider offers financial cover
+            for losses based on the policy terms.</span>
+        </p>
+        <p>
+          <span class="txt">When the event covered under your policy occurs, a claim must be filed. The purpose is to
+            notify the
+            insurer that the event for which you have opted for an insurance has occurred and the insurer should pay
+            the claim amount.</span>
+        </p>
+        <h2>
+          <b><span class="blue-title-unique">How does an insurance claim work?</span></b>
+        </h2>
+        <p><span class="txt">An insurance claim acts as a safety net against financial losses.</span></p>
+        <p>
+          <span class="txt">Unforeseen expenses like medical emergencies, accidents, and life's uncertainties can cause
+            immense
+            economic distress. Insurance claims can provide relief in such unfortunate events.</span>
+        </p>
+        <p>
+          <span class="txt">The funds can cover medical bills, act as income replacements, and help your family meet
+            their living
+            costs. If you have financial dependents, claim payouts can serve as a lifeline if your family loses the
+            support of your income.</span>
+        </p>
+        <h2>
+          <b><span class="blue-title-unique">Processing a claim involves the following stages:</span></b>
+        </h2>
+        <ul class="reason">
+          <li class="txt">
+            When an unfortunate event occurs, the incident must be reported to your insurance provider. This process
+            is known as raising a claim.
+          </li>
+          <li class="txt">
+            Filing a claim involves filling up claim forms on the insurer's website or branch office.
+          </li>
+          <li class="txt">Documents supporting the genuineness of the claim must also be submitted.</li>
+          <li class="txt">Then the insurance provider reviews the claim, assessing its validity.</li>
+          <li class="txt">
+            If it meets the terms and conditions stated in your policy, the insurer approves the claim.
+          </li>
+          <li class="txt">
+            Once approved, the insurance company pays the benefits specified in your policy document. For
+            <a href="/" target="_blank">life insurance</a> claims, your beneficiary receives the payout.
+          </li>
+          <li class="txt">
+            The insurer might provide an upfront lump-sum amount or it might stagger the payout as regular payments
+            based on the terms of your policy.
+          </li>
+        </ul>
+        <p>
+          <span class="txt">The time insurers take to verify and pay the insured sum varies on a case-to-case basis. If
+            the
+            documents are in order,
+            <a href="/insurance-claim/claim-settlement-ratio.html" target="_blank">claim settlement</a> takes only a
+            few days. To make sure claims are disbursed without delay in times of need, you must look into the
+            insurer's credibility and customer service record before buying insurance.</span>
+        </p>
+        <p>
+          <span class="txt">However, when you buy insurance, you must disclose all details about your health and
+            lifestyle habits
+            to your insurer. If you suppress or misstate any fact, the insurer can reject claims on your
+            policy.</span>
+        </p>
+      </div> -->
+
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button fs-2 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              What is an insurance claim?
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse" aria-labelledby="flush-headingOne" >
+            <div class="accordion-body lead lh-lg">An insurance claim is a formal request to your insurance provider for reimbursement against losses covered under your insurance policy. <br> Insurance is a financial agreement between you and your insurer. You have to pay a fixed premium. And in exchange, the insurance provider offers financial cover for losses based on the policy terms. <br>When the event covered under your policy occurs, a claim must be filed. The purpose is to notify the insurer that the event for which you have opted for an insurance has occurred and the insurer should pay the claim amount.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button  fs-2 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              How does an insurance claim work?
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse " aria-labelledby="flush-headingTwo" >
+            <div class="accordion-body lead lh-lg">An insurance claim acts as a safety net against financial losses. <br>Unforeseen expenses like medical emergencies, accidents, and life's uncertainties can cause immense economic distress. Insurance claims can provide relief in such unfortunate events. <br>The funds can cover medical bills, act as income replacements, and help your family meet their living costs. If you have financial dependents, claim payouts can serve as a lifeline if your family loses the support of your income.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button  fs-2 fw-light" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Processing a claim involves the following stages:
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse " aria-labelledby="flush-headingThree" >
+            <div class="accordion-body lead lh-lg">
+              <ul class="reason lead">
+                <li class="">
+                  When an unfortunate event occurs, the incident must be reported to your insurance provider. This process
+                  is known as raising a claim.
+                </li>
+                <li class="">
+                  Filing a claim involves filling up claim forms on the insurer's website or branch office.
+                </li>
+                <li class="">Documents supporting the genuineness of the claim must also be submitted.</li>
+                <li class="">Then the insurance provider reviews the claim, assessing its validity.</li>
+                <li class="">
+                  If it meets the terms and conditions stated in your policy, the insurer approves the claim.
+                </li>
+                <li class="">
+                  Once approved, the insurance company pays the benefits specified in your policy document. For
+                  life insurance claims, your beneficiary receives the payout.
+                </li>
+                <li class="">
+                  The insurer might provide an upfront lump-sum amount or it might stagger the payout as regular payments
+                  based on the terms of your policy.
+                </li>
+              </ul>
+              The time insurers take to verify and pay the insured sum varies on a case-to-case basis. If the documents are in order, claim settlement takes only a few days. To make sure claims are disbursed without delay in times of need, you must look into the insurer's credibility and customer service record before buying insurance. <br>However, when you buy insurance, you must disclose all details about your health and lifestyle habits to your insurer. If you suppress or misstate any fact, the insurer can reject claims on your policy.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+{% endblock body %}

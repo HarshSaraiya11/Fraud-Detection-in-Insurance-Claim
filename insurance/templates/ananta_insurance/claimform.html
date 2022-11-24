@@ -1,0 +1,284 @@
+{% extends 'base.html' %}
+
+{% block title %}Claim Form{% endblock title %}
+{% block claimActive %}link-light active{% endblock claimActive %}
+{% block cities %}
+{% load static %}
+<script src="{% static 'ananta_insurance/cities.js' %}"></script>
+{% endblock cities %}
+
+{% block body %}
+    <!-- claimform starts here   -->
+    <main class="pb-5">
+        {% comment %} <div class="form-heading d-block align-items-center text-center justify-content-center justify-content-md-between pb-5 display-3 border-bottom">
+            Insurance Claim Form
+        </div> {% endcomment %}
+        <div class="position-relative">
+            {% load static %}
+            <img src="{% static 'ananta_insurance/claim-banner-resized.jpg' %}" alt=" banner" class="w-100">
+            <div class="position-absolute top-50 end-50 ms-5 translate-middle-y">
+              <div class="display-3 fw-light">Insurance Claim Form</div>
+            </div>
+          </div>
+
+        <div class="container shadow-lg my-5 rounded-4 px-4 py-4">
+
+            <div class="mb-2  fs-3 border-bottom border-dark py-2 mb-3 fw-light">
+                Information about insured
+            </div>
+            <form class="row g-4 needs-validation" action="" method="post">
+                
+                <div class="col-md-6">
+                    <label for="policyno" class="form-label">Policy Number</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2" id="policyno">{{policyno}}</div>
+                </div>
+                <div class="col-md-6">
+                    <label for="premium" class="form-label">Annual Policy Premium</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2" id="premium">{{premium}}</div>
+                </div>
+                <div class="col-md-6">
+                    <label for="firstname" class="form-label">First Name</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{fname}}</div>
+                </div>
+                <div class="col-md-6">
+                    <label for="lastname" class="form-label">Last Name</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{lname}}</div>
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{address1}}</div>
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress2" class="form-label">Address 2</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{address2}}</div>
+
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">City</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{city}}</div>
+                </div>
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">State</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{state}}</div>
+                </div>
+                <div class="col-md-2">
+                    <label for="inputZip" class="form-label">Pincode</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{pincode}}</div>
+                </div>
+                <div class="col-md-6">
+                    <label for="PAN" class="form-label">PAN</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{pan}}</div>
+                </div>
+                <div class="col-md-6">
+                    <label for="Aadhar" class="form-label">Aadhar</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{aadhar}}</div>
+                </div>
+
+                <div class="fs-3 border-bottom border-dark py-2 mt-5 mb-2 fw-light">
+                    Information about Insured Vehicle
+                </div>
+                <div class="col-md-6">
+                    <label for="registrationno" class="form-label">Registration Number</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{registrationno}}</div>
+                </div>
+                <div class="col-md-6">
+                    <label for="chassisno" class="form-label">Chassis Number / VIN</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{chassisno}}</div>
+                </div>
+                <div class="col-md-6">
+                    <label for="brand" class="form-label">Car Brand</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{brand}}</div>
+                </div>
+                <div class="col-md-6">
+                    <label for="year" class="form-label">Car Year</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{caryear}}</div>
+                </div>
+
+<!-- ******************** FORM STARTS FROM HERE ************************** -->
+
+                <div class="fs-3 border-bottom border-dark py-2 mt-5 mb-2 fw-light">
+                    Details about the driver (At the material time of accident)
+                </div>
+                <div class="col-md-6">
+                    <label for="fullname" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Full Name">
+                </div>
+                <!-- <div class="col-md-3">Driver is :</div>
+                <div class="form-check col-md-3">
+                    <input class="form-check-input" type="radio" name="driver-is" id="owner" value="owner"
+                           title="owner">
+                    <label class="form-check-label" for="owner">Owner</label>
+                </div>
+                <div class="form-check col-md-3">
+                    <input class="form-check-input" type="radio" name="driver-is" id="paiddriver" value="paiddriver"
+                           title="paiddriver">
+                    <label class="form-check-label" for="paiddriver">Paid Driver</label>
+                </div>
+                <div class="form-check col-md-3">
+                    <input class="form-check-input" type="radio" name="driver-is" id="friend" value="friend"
+                           title="friend">
+                    <label class="form-check-label" for="friend">Friend/Relative</label>
+                </div> -->
+
+                <div class="col-md-6">
+                    <label for="driver_is" class="form-label">Driver is:</label>
+                    <select class="form-select" id="driver_is" name="driver_is" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="owner">Owner</option>
+                        <option value="paiddriver">Paid Driver</option>
+                        <option value="friend">Friend</option>
+                        <option value="relative">Relative</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="10 digit Mobile Number">
+                </div>
+                <div class="col-md-6">
+                    <label for="dlnumber" class="form-label">DL Number</label>
+                    <input type="text" class="form-control" id="dlnumber" name="dlnumber" placeholder="Driving Licence Number">
+                </div>
+                <div class="fs-3 border-bottom border-dark py-2 mt-5 mb-2 fw-light">
+                    Details of Accident / Theft
+                </div>
+                <div class="col-md-4">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="date" name="date">
+                </div>
+                <div class="col-md-4">
+                    <label for="time" class="form-label">Time</label>
+                    <input type="time" class="form-control" id="time" name="time">
+                </div>
+                <div class="col-md-4">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" class="form-control" id="location" name="location" placeholder="Area / Street">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="sts" class="form-label">State</label>
+                    <select onchange="print_city('state', this.selectedIndex);" id="sts" name="stt" class="form-select"
+                            required>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="state" class="form-label">City</label>
+                    <select id="state" class="form-select" name="city" required>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="type" class="form-label">Accident type</label>
+                    <select class="form-select" name="accident_type" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">Single Vehicle Collision</option>
+                        <option value="2">Multi-vehicle Collision</option>
+                        <option value="3">Parked Car</option>
+                        <option value="4">Vehicle Theft</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="type" class="form-label">Collision type</label>
+                    <select class="form-select" name="collision_type" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="0">Side Collision</option>
+                        <option value="1">Rear Collision</option>
+                        <option value="2">Front Collision</option>
+                        <option value="3">Other</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="type" class="form-label">Accident severity</label>
+                    <select class="form-select" name="severity" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="0">Major Damage</option>
+                        <option value="1">Minor Damage</option>
+                        <option value="2">Total Loss</option>
+                        <option value="3">Trivial Damage</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="type" class="form-label">Damaged Material Info</label>
+                    <select class="form-select" name="damage_material" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="Metal">Metal</option>
+                        <option value="Fiber">Fiber</option>
+                        <option value="Glass">Glass</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="type" class="form-label">Authorities Contacted</label>
+                    <select class="form-select" name="auth_contacted" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="0">Police</option>
+                        <option value="1">Fire Dept</option>
+                        <option value="2">Ambulance</option>
+                        <option value="3">Other</option>
+                        <option value="4">None</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="type" class="form-label">Police Report Available?</label>
+                    <select class="form-select" name="police_report" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="0">Yes</option>
+                        <option value="1">No</option>
+                        <option value="2">N/A</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="fir" class="form-label">If yes, please provide a copy of FIR Details (FIR
+                        number)</label>
+                    <input type="text" class="form-control" id="fir" name="fir" size="10">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="type" class="form-label">Was any third party responsible for the accident /
+                        theft?</label>
+                    <select class="form-select" name="third_party_resp" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="noofvehicle" class="form-label">Number of vehicles involved</label>
+                    <input type="number" class="form-control" id="noofvehicle" name="noofvehicle">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="noofpeople" class="form-label">Number of persons travelling</label>
+                    <input type="number" class="form-control" id="noofpeople" name="noofpeople">
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label for="description" class="form-label">Give brief description of the
+                        accident</label>
+                    <textarea class="form-control" id="description" name="description" rows="3" maxlength="300"></textarea>
+                </div>
+                <div class="col-12">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Submit Claim</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+{% endblock body %}
+
+{% block printstate %}
+<script language="javascript">print_state("sts");</script>
+{% endblock printstate %}
+
+{% comment %} <!-- ----------------LIST OF FIELDS THAT CAN BE ADDED--------------- -->
+                <!-- VIN vehicle identification number VERY IMP. chassis no hi VIN no hai aisa google pe likha hai -->
+                <!-- authorities contacted  done -->
+                <!-- police report available  done -->
+                <!-- no of vehicles involved   done -->
+                <!-- damaged material info  METAL, Fiber, glass, done -->
+
+    <!-- claimform ends here  --> {% endcomment %}

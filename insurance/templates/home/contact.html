@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block contactActive %}link-light active {% endblock contactActive %}
+{% block body %}
+<main>
+    {% load static %}
+    <div class="position-relative">
+      <img src="{% static 'home/claim-banner-resized.jpg' %}" alt=" banner" class="w-100">
+      <div class="position-absolute top-50 end-50 ms-5 translate-middle-y">
+        <div class="display-3 fw-light">Get In Touch</div>
+        <p class="lead">At Ananta Insurance, it is our constant endeavour to provide great customer experience. We commit to resolving your queries to your satisfaction.</p>
+      </div>
+    </div>
+
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-4">Address</div>
+            <div class="col-4">Phone Number</div>
+            <div class="col-4">Email</div>
+        </div>
+    </div> -->
+    <div class="py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-geo-alt display-5 text-center"></i>
+                        <h5 class="card-title display-6 text-center mt-2 pb-2">Address</h5>
+                        <p class="card-text text-center lead">Corporate Office</p>
+                        <p class="card-text text-center ">Trade Globe, Andheri-Kurla Road, Andheri (East) Mumbai-400059</p>
+
+                    </div>
+                </div>
+                </div>
+                <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-telephone display-5 text-center"></i>
+                        <h5 class="card-title display-6 text-center mt-2 pb-2">Phone Number</h5>
+                        <p class="card-text text-center lead">Claim Settlement</p>
+                        <p class="card-text text-center mb-0"><span class="">Head Office:</span> 022-42547600 / 7748</p>
+                        <p class="card-text text-center"><span class="">Toll-Free:</span> 1800 266 2256</p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="bi bi-envelope-at display-5"></i>
+                    <h5 class="card-title display-6 text-center mt-2 pb-2">Email</h5>
+                    <p class="card-text text-center lead ">Settlement & Sales Team</p>
+                    <a href="" class="card-text text-center">care@anantainsurance.com</a>
+                    <a href="" class="card-text text-center">sales@anantainsurance.com</a>
+                    <!-- <h5 class="card-text text-center fw-semibold mb-0">Sales</h5>
+                    <a href="" class="card-text text-center">sales@anantainsurance.com</a> -->
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}
