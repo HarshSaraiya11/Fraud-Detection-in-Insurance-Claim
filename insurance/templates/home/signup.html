@@ -13,13 +13,13 @@
 <body>
     <div class="container py-5">
         <div class="mb-2  fs-3 border-bottom border-dark py-2 mb-3 fw-light">
-            Sign up
+            Sign up and create new policy
         </div>
 
         <form class="row g-4 needs-validation" action="/signup" method="post">
             <div class="col-md-6">
-                <label for="username" class="form-label">UserName</label>
-                <input type="email" class="form-control" id="username" name="username" placeholder="UserName">
+                <label for="username" class="form-label">Username same as Email</label>
+                <input type="email" class="form-control" id="username" name="username" placeholder="Username">
             </div>
             <div class="col-md-6">
                 <label for="firstname" class="form-label">First Name</label>
@@ -41,6 +41,14 @@
             <div class="col-md-6">
                 <label for="age" class="form-label">Age</label>
                 <input type="number" class="form-control" id="age" name="age" placeholder="Age" min="18" max="100">  
+            </div>
+            <div class="col-md-6">
+                <label for="insured_sex" class="form_label">Gender</label>
+                <select class="form-select" id="insured_sex" name="insured_sex" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
             </div>
 
             <div class="col-md-6">
@@ -89,27 +97,39 @@
                 <label for="policyno" class="form-label">Policy Number</label>
                 <input type="text" class="form-control" id="policyno" name="policyno" minlength="6" placeholder="Policy Number">
             </div>
-            
             <div class="col-md-6">
                 <label for="premium" class="form-label">Annual Premium</label>
                 <input type="number" class="form-control" id="premium" name="premium" min="0" placeholder="Annual Premium">
-            </div>
+            </div> 
 
             <div class="col-md-6">
                 <label for="brand" class="form-label">Car brand</label>
-                <input type="text" class="form-control" id="brand" name="brand" placeholder="Car Brand">
+                <select class="form-select" name="brand" id="brand" name="brand">
+                    <option selected>Open this select menu</option>
+                    <option value="0">Audi</option>
+                    <option value="1">BMW</option>
+                    <option value="2">Chevrolet</option>
+                    <option value="3">Ford</option>
+                    <option value="4">Honda</option>
+                    <option value="5">Hyundai</option>
+                    <option value="6">Jeep</option>
+                    <option value="7">Mahindra</option>
+                    <option value="8">Mercedes</option>
+                    <option value="9">Nissan</option>
+                    <option value="10">Skoda</option>
+                    <option value="11">Tata</option>
+                    <option value="12">Toyoto</option>
+                    <option value="13">Volkswag</option>
+                </select>
             </div>
-
             <div class="col-md-6">
                 <label for="caryear" class="form-label">Car year</label>
                 <input type="text" class="form-control" id="caryear" name="caryear" placeholder="Car year">
             </div>
-            
             <div class="col-md-6">
                 <label for="registrationno " class="form-label">Registration Number</label>
                 <input type="text" class="form-control" id="registrationno" name="registrationno" placeholder="Registration No">
             </div>
-
             <div class="col-md-6">
                 <label for="chassisno" class="form-label">Chassis Number / VIN</label>
                 <input type="text" class="form-control" id="chassisno" name="chassisno" placeholder="Chassis No" maxlength="17">

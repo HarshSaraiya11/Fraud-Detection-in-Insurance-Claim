@@ -6,6 +6,13 @@
 {% load static %}
 <script src="{% static 'ananta_insurance/cities.js' %}"></script>
 {% endblock cities %}
+{% block css %}
+<style>
+.custom-bg{
+    background-color: rgb(218, 218, 218);
+}
+</style>
+{% endblock css %}
 
 {% block body %}
     <!-- claimform starts here   -->
@@ -30,48 +37,83 @@
                 
                 <div class="col-md-6">
                     <label for="policyno" class="form-label">Policy Number</label>
-                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2" id="policyno">{{policyno}}</div>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light" id="policyno">{{policyno}}</div>
                 </div>
                 <div class="col-md-6">
                     <label for="premium" class="form-label">Annual Policy Premium</label>
-                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2" id="premium">{{premium}}</div>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light" id="premium">{{premium}}</div>
                 </div>
                 <div class="col-md-6">
                     <label for="firstname" class="form-label">First Name</label>
-                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{fname}}</div>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light">{{fname}}</div>
                 </div>
                 <div class="col-md-6">
                     <label for="lastname" class="form-label">Last Name</label>
-                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{lname}}</div>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light">{{lname}}</div>
                 </div>
                 <div class="col-12">
                     <label for="inputAddress" class="form-label">Address</label>
-                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{address1}}</div>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light">{{address1}}</div>
                 </div>
                 <div class="col-12">
                     <label for="inputAddress2" class="form-label">Address 2</label>
-                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{address2}}</div>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light">{{address2}}</div>
 
                 </div>
                 <div class="col-md-6">
                     <label for="inputCity" class="form-label">City</label>
-                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{city}}</div>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light">{{city}}</div>
                 </div>
                 <div class="col-md-4">
                     <label for="inputState" class="form-label">State</label>
-                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{state}}</div>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light">{{state}}</div>
                 </div>
                 <div class="col-md-2">
                     <label for="inputZip" class="form-label">Pincode</label>
-                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{pincode}}</div>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light">{{pincode}}</div>
                 </div>
                 <div class="col-md-6">
                     <label for="PAN" class="form-label">PAN</label>
-                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{pan}}</div>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light">{{pan}}</div>
                 </div>
                 <div class="col-md-6">
                     <label for="Aadhar" class="form-label">Aadhar</label>
-                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{aadhar}}</div>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light">{{aadhar}}</div>
+                </div>
+                <div class="col-md-6">
+                    <label for="age" class="form-label">Age</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light">{{age}}</div>
+                </div>
+                <div class="col-md-6">
+                    <label for="age" class="form-label">Insured Sex</label>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light">{{insured_sex}}</div>
+                </div>
+                <!-- new entries -->
+                <!-- annual premium change to float
+                umbrella limit add to old database
+            insured sex  -->
+                <div class="col-md-6">
+                    <label for="policy_period" class="form-label">Policy Period (Months as customer till now)</label>
+                    <input type="number" class="form-control" id="policy_period" name="policy_period" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="policy_csl" class="form-label">Policy CSL</label>
+                    <select class="form-select" id="policy_csl" name="policy_csl" aria-label="Default select example">
+                        {% comment %} <option selected>Open this select menu</option> {% endcomment %}
+                        <option value="1">250/500</option>
+                        <option value="0">100/300</option>
+                        <option value="2">500/1000</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="policy_deductible" class="form-label">Policy Deductible Amount</label>
+                    <input type="number" class="form-control" id="policy_deductible" name="policy_deductible" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="umbrella_limit" class="form-label">Umbrella Limit</label>
+                    <input type="number" class="form-control" id="umbrella_limit" name="umbrella_limit" min="0" placeholder="Umbrella Limit" required>
                 </div>
 
                 <div class="fs-3 border-bottom border-dark py-2 mt-5 mb-2 fw-light">
@@ -79,19 +121,19 @@
                 </div>
                 <div class="col-md-6">
                     <label for="registrationno" class="form-label">Registration Number</label>
-                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{registrationno}}</div>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light">{{registrationno}}</div>
                 </div>
                 <div class="col-md-6">
                     <label for="chassisno" class="form-label">Chassis Number / VIN</label>
-                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{chassisno}}</div>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light">{{chassisno}}</div>
                 </div>
                 <div class="col-md-6">
                     <label for="brand" class="form-label">Car Brand</label>
-                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{brand}}</div>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light">{{brand}}</div>
                 </div>
                 <div class="col-md-6">
                     <label for="year" class="form-label">Car Year</label>
-                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2">{{caryear}}</div>
+                    <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light">{{caryear}}</div>
                 </div>
 
 <!-- ******************** FORM STARTS FROM HERE ************************** -->
@@ -103,22 +145,6 @@
                     <label for="fullname" class="form-label">Full Name</label>
                     <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Full Name">
                 </div>
-                <!-- <div class="col-md-3">Driver is :</div>
-                <div class="form-check col-md-3">
-                    <input class="form-check-input" type="radio" name="driver-is" id="owner" value="owner"
-                           title="owner">
-                    <label class="form-check-label" for="owner">Owner</label>
-                </div>
-                <div class="form-check col-md-3">
-                    <input class="form-check-input" type="radio" name="driver-is" id="paiddriver" value="paiddriver"
-                           title="paiddriver">
-                    <label class="form-check-label" for="paiddriver">Paid Driver</label>
-                </div>
-                <div class="form-check col-md-3">
-                    <input class="form-check-input" type="radio" name="driver-is" id="friend" value="friend"
-                           title="friend">
-                    <label class="form-check-label" for="friend">Friend/Relative</label>
-                </div> -->
 
                 <div class="col-md-6">
                     <label for="driver_is" class="form-label">Driver is:</label>
@@ -147,8 +173,8 @@
                     <input type="date" class="form-control" id="date" name="date">
                 </div>
                 <div class="col-md-4">
-                    <label for="time" class="form-label">Time</label>
-                    <input type="time" class="form-control" id="time" name="time">
+                    <label for="time" class="form-label">Incident Hour</label>
+                    <input type="number" class="form-control" id="time" name="time" max="23" min="0" placeholder="Incident Hour">
                 </div>
                 <div class="col-md-4">
                     <label for="location" class="form-label">Location</label>
@@ -171,20 +197,20 @@
                     <label for="type" class="form-label">Accident type</label>
                     <select class="form-select" name="accident_type" aria-label="Default select example">
                         <option selected>Open this select menu</option>
-                        <option value="1">Single Vehicle Collision</option>
-                        <option value="2">Multi-vehicle Collision</option>
-                        <option value="3">Parked Car</option>
-                        <option value="4">Vehicle Theft</option>
+                        <option value="2">Single Vehicle Collision</option>
+                        <option value="0">Multi-vehicle Collision</option>
+                        <option value="1">Parked Car</option>
+                        <option value="3">Vehicle Theft</option>
                     </select>
                 </div>
                 <div class="col-md-3">
                     <label for="type" class="form-label">Collision type</label>
                     <select class="form-select" name="collision_type" aria-label="Default select example">
                         <option selected>Open this select menu</option>
-                        <option value="0">Side Collision</option>
+                        <option value="2">Side Collision</option>
                         <option value="1">Rear Collision</option>
-                        <option value="2">Front Collision</option>
-                        <option value="3">Other</option>
+                        <option value="0">Front Collision</option>
+                        <option value="3">Undocumented</option>
                     </select>
                 </div>
                 <div class="col-md-3">
@@ -212,20 +238,20 @@
                     <label for="type" class="form-label">Authorities Contacted</label>
                     <select class="form-select" name="auth_contacted" aria-label="Default select example">
                         <option selected>Open this select menu</option>
-                        <option value="0">Police</option>
-                        <option value="1">Fire Dept</option>
-                        <option value="2">Ambulance</option>
+                        <option value="4">Police</option>
+                        <option value="1">Fire-Dept</option>
+                        <option value="0">Ambulance</option>
                         <option value="3">Other</option>
-                        <option value="4">None</option>
+                        <option value="2">None</option>
                     </select>
                 </div>
                 <div class="col-md-4">
                     <label for="type" class="form-label">Police Report Available?</label>
                     <select class="form-select" name="police_report" aria-label="Default select example">
                         <option selected>Open this select menu</option>
-                        <option value="0">Yes</option>
-                        <option value="1">No</option>
-                        <option value="2">N/A</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                        <option value="2">Undocumented</option>
                     </select>
                 </div>
 
@@ -254,6 +280,45 @@
                     <label for="noofpeople" class="form-label">Number of persons travelling</label>
                     <input type="number" class="form-control" id="noofpeople" name="noofpeople">
                 </div>
+
+                <div class="col-md-4">
+                    <label for="property_damage" class="form-label">Property Damage</label>
+                    <select class="form-select" name="property_damage" id="property_damage" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                        <option value="2">Undocumented</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="people_injured" class="form-label">People Injured</label>
+                    <input type="number" class="form-control" id="people_injured" name="people_injured" max="5" min="0">
+                </div>
+                <div class="col-md-4">
+                    <label for="no_of_witnesses" class="form-label">Number of Witnesses</label>
+                    <input type="number" class="form-control" id="no_of_witnesses" name="no_of_witnesses" max="5" min="0">
+                </div>
+
+                <hr>
+
+                <div class="col-md-4">
+                    <label for="injury_claim" class="form-label">Injury Claim</label>
+                    <input type="text" on class="form-control" id="injury_claim" name="injury_claim" placeholder="">
+                </div>
+                <div class="col-md-4">
+                    <label for="property_claim" class="form-label">Property Claim</label>
+                    <input type="text" class="form-control" id="property_claim" name="property_claim" placeholder="">
+                </div>
+                <div class="col-md-4">
+                    <label for="vehicle_claim" class="form-label">Vehicle Claim</label>
+                    <input type="text" class="form-control" id="vehicle_claim" name="vehicle_claim" placeholder="">
+                </div>
+                <div class="col-md-4">
+                    <label for="total_claim" class="form-label">Total Claim Amount</label>
+                    <input type="text" class="form-control" id="total_claim" name="total_claim" placeholder="Injury + Property + Vehicle">
+                </div>
+
 
                 <div class="mb-3 col-md-12">
                     <label for="description" class="form-label">Give brief description of the

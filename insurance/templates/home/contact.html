@@ -2,6 +2,11 @@
 {% block title %}Home{% endblock title %}
 
 {% block contactActive %}link-light active {% endblock contactActive %}
+{% block css %}
+{% comment %} .bi-facebook:hover {
+    color: blue;
+} {% endcomment %}
+{% endblock css %}
 {% block body %}
 <main>
     {% load static %}
@@ -59,6 +64,23 @@
                 </div>
                 </div>
             </div>
+        </div>
+        <div class="container">
+            <hr>
+        </div>
+        <div class="container text-center display-6 pt-5">
+            Connect us at
+                <div class="row mt-3">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <i class="bi bi-facebook mx-2 text-primary"></i>
+                        <i class="bi bi-linkedin mx-2 "></i>
+                        <i class="bi bi-youtube mx-2 text-danger"></i>
+                        <i class="bi bi-github mx-2 "></i>
+                        <i class="bi bi-twitter mx-2 text-primary"></i>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
         </div>
     </div>
 </main>

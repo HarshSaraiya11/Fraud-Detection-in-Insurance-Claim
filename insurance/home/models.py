@@ -10,6 +10,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete= models.CASCADE, primary_key=True)
     phone = models.BigIntegerField(default="1111111111")
     age = models.IntegerField(validators=[MinValueValidator(18), MaxValueValidator(100)])
+    insured_sex = models.IntegerField(default=1, validators=[MinValueValidator(0), MaxValueValidator(1)])
     address1 = models.CharField(max_length=50)
     address2 = models.CharField(max_length=50)
     city = models.CharField(max_length=20)

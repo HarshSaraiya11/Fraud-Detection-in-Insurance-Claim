@@ -13,7 +13,7 @@ def contact(request):
     return render(request, 'home/contact.html')
 
 def about(request):
-    return HttpResponse("This is home about")
+    return render(request, 'home/about.html')
 
 
 
@@ -28,6 +28,7 @@ def signup(request):
         pass1 =request.POST['pass1']
         pass2 =request.POST['pass2']
         age =request.POST['age']
+        insured_sex = request.POST['insured_sex']
         address1 =request.POST['address1']
         address2 =request.POST['address2']
         city =request.POST['city']
@@ -42,33 +43,17 @@ def signup(request):
         registrationno =request.POST['registrationno']
         chassisno =request.POST['chassisno']
 
+
         # create user 
         Myuser = User.objects.create_user(username, email, pass1)
         Myuser.first_name = firstname
         Myuser.last_name = lastname
         Myuser.save()
         # print(Myuser)
-        # Myuser.profile.phone = phone
-        # Myuser.profile.age = age
-        # Myuser.profile.address1 = address1
-        # Myuser.profile.address2 = address2
-        # Myuser.profile.city = city
-        # Myuser.profile.state = state
-        # Myuser.profile.pincode = pincode
-        # Myuser.profile.pan = pan
-        # Myuser.profile.aadhar = aadhar
-        # Myuser.profile.policyno = policyno
-        # Myuser.profile.premium = premium
-        # Myuser.profile.brand = brand
-        # Myuser.profile.caryear = caryear
-        # Myuser.profile.registrationno = registrationno
-        # Myuser.profile.chassisno = chassisno
-        # Myuser.save()
-  
-        
+        print(insured_sex)
         u = User.objects.get(username=username)
         uid = u.pk
-        UserProfile = Profile(uid, phone, age, address1, address2, city, state, pincode, pan, aadhar, policyno, premium, brand, caryear, registrationno, chassisno)
+        UserProfile = Profile(uid, phone, age, insured_sex, address1, address2, city, state, pincode, pan, aadhar, policyno, premium, brand, caryear, registrationno, chassisno)
         UserProfile.save()
 
     return render(request, "home/signup.html")

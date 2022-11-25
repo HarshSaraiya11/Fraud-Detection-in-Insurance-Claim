@@ -6,12 +6,17 @@
             <div class="py-5">
             <div class="container">
                 <div class="gif align-items-center d-block text-center p-5">
-                    {% load static %}
-                    {% comment %} <img src="{% static 'ananta_insurance/navbar-logo.png' %}" alt="" srcset=""> {% endcomment %}
-                    <i class="fa-regular fa-circle-check fa-8x fa-beat text-primary"></i>
+                    {% if result == "Not a fraudulent claim." %}
+                    <i class="fa-regular fa-circle-check fa-8x fa-beat text-success"></i>
+                    {% else %}
+                    <i class="fa-solid fa-circle-xmark fa-8x fa-beat text-danger"></i>
+                    {% endif %}
+                    
                 </div>
             <div class="d-block align-items-center text-center justify-content-center justify-content-between py-5 display-3 border-top border-bottom">
-           Insurance Claim Form submitted successfully.</div>
+                Claim form submitted successfully. <br>
+           {{result}}
+        </div>
     
         </main>
 {% endblock body %}

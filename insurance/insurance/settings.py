@@ -56,7 +56,7 @@ ROOT_URLCONF = 'insurance.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['templates', 'savedmodels'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
