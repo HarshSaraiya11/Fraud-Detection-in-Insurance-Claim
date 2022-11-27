@@ -131,3 +131,6 @@ def claim_form(request):
 def success(request):
     
     return render(request, 'ananta_insurance/success.html')
+
+def dashboard(request):
+    return render(request, 'ananta_insurance/dashboard.html')

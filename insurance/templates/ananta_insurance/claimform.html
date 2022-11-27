@@ -30,20 +30,20 @@
         <div class="container sub-nav d-block sticky-top bg-white border-top border-bottom py-3" style="top: 92px;">
             <nav>
                 <div class="nav nav-pills" id="pills-tab" role="tablist">
-                    <button class="nav-link active mx-2" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-                            type="button" role="tab" aria-controls="pills-home" aria-selected="true">Information about
+                    <button class="nav-link active mx-2" id="pills-infoAboutInsured-tab" data-bs-toggle="pill" data-bs-target="#pills-infoAboutInsured"
+                            type="button" role="tab" aria-controls="pills-infoAboutInsured" aria-selected="true">Information about
                         insured</button>
                         <i class="bi bi-arrow-right mt-2 fs-5"></i>
-                    <button class="nav-link mx-2" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-                            type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Information about
+                    <button class="nav-link mx-2" id="pills-infoAboutInsuredVehicle-tab" data-bs-toggle="pill" data-bs-target="#pills-infoAboutInsuredVehicle"
+                            type="button" role="tab" aria-controls="pills-infoAboutInsuredVehicle" aria-selected="false">Information about
                         Insured Vehicle</button>
                         <i class="bi bi-arrow-right mt-2 fs-5"></i>
-                    <button class="nav-link mx-2" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-                            type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Details about the
+                    <button class="nav-link mx-2" id="pills-driverDetails-tab" data-bs-toggle="pill" data-bs-target="#pills-driverDetails"
+                            type="button" role="tab" aria-controls="pills-driverDetails" aria-selected="false">Details about the
                         driver (At the material time of accident)</button>
                         <i class="bi bi-arrow-right mt-2 fs-5"></i>
-                    <button class="nav-link mx-2" id="pills-accident-tab" data-bs-toggle="pill" data-bs-target="#pills-accident"
-                            type="button" role="tab" aria-controls="pills-accident" aria-selected="false">Details of
+                    <button class="nav-link mx-2" id="pills-accidentDetails-tab" data-bs-toggle="pill" data-bs-target="#pills-accidentDetails"
+                            type="button" role="tab" aria-controls="pills-accidentDetails" aria-selected="false">Details of
                         Accident / Theft</button>
                 </div>
             </nav>
@@ -52,13 +52,12 @@
 
     <div class="container shadow-lg my-3 rounded-4 px-4 py-4">
         <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-                <div class="row">
-                    <div class="mb-2  fs-3 border-bottom border-dark fw-light">
-                        Information about insured
-                    </div>
-                    <form class="row g-3 needs-validation mt-0" action="" method="post">
-        
+            <div class="tab-pane fade show active" id="pills-infoAboutInsured" role="tabpanel" aria-labelledby="pills-infoAboutInsured-tab" tabindex="0">
+                <form class=" needs-validation mt-0" action="" method="post">
+                <div class="mb-2  fs-3 border-bottom border-dark fw-light">
+                    Information about insured
+                </div>
+                <div class="row g-3">
                         <div class="col-md-6">
                             <label for="policyno" class="form-label">Policy Number</label>
                             <div class="border fs-6 fw-normal ps-3 py-1 rounded-2  bg-light" id="policyno">{{policyno}}</div>
@@ -117,29 +116,54 @@
                         <div class="col-md-6">
                             <label for="policy_period" class="form-label">Policy Period (Months as customer till now)</label>
                             <input type="number" class="form-control" id="policy_period" name="policy_period" required>
+                            <!-- <div class="invalid-feedback">
+                                Please provide policy period.
+                            </div>
+                            <div class="valid-feedback">
+                                Looks good!
+                              </div> -->
                         </div>
                         <div class="col-md-6">
                             <label for="policy_csl" class="form-label">Policy CSL</label>
-                            <select class="form-select" id="policy_csl" name="policy_csl" aria-label="Default select example">
+                            <select class="form-select" id="policy_csl" name="policy_csl" aria-label="Default select example" required>
+                                <option selected disabled value="">Open this select menu</option>
                                 <option value="1">250/500</option>
                                 <option value="0">100/300</option>
                                 <option value="2">500/1000</option>
                             </select>
+                            <!-- <div class="valid-feedback">
+                                Looks good!
+                              </div>
+                            <div class="invalid-feedback">
+                                Please fill out this field.
+                            </div> -->
                         </div>
         
                         <div class="col-md-6">
                             <label for="policy_deductible" class="form-label">Policy Deductible Amount</label>
                             <input type="number" class="form-control" id="policy_deductible" name="policy_deductible" required>
+                            <!-- <div class="invalid-feedback">
+                                Please fill out this field.
+                            </div>
+                            <div class="valid-feedback">
+                                Looks good!
+                              </div> -->
                         </div>
         
                         <div class="col-md-6">
                             <label for="umbrella_limit" class="form-label">Umbrella Limit</label>
                             <input type="number" class="form-control" id="umbrella_limit" name="umbrella_limit" min="0"
                                 placeholder="Umbrella Limit" required>
+                            <!-- <div class="invalid-feedback">
+                                Please fill out this field.
+                            </div>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div> -->
                         </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+            <div class="tab-pane fade" id="pills-infoAboutInsuredVehicle" role="tabpanel" aria-labelledby="pills-proinfoAboutInsuredVehiclefile-tab" tabindex="0">
                 <div class="row g-3">
                     <div class="fs-3 border-bottom border-dark py-2 mb-2 fw-light mt-0">
                         Information about Insured Vehicle
@@ -162,14 +186,20 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+            <div class="tab-pane fade" id="pills-driverDetails" role="tabpanel" aria-labelledby="pills-driverDetails-tab" tabindex="0">
                 <div class="row g-3">
                     <div class="fs-3 border-bottom border-dark py-2 mb-2 fw-light mt-0">
                         Details about the driver (At the material time of accident)
                     </div>
                     <div class="col-md-6">
                         <label for="fullname" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Full Name">
+                        <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Full Name" required>
+                        <!-- <div class="invalid-feedback">
+                            Please enter your name.
+                          </div>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div> -->
                     </div>
     
                     <div class="col-md-6">
@@ -185,7 +215,13 @@
     
                     <div class="col-md-6">
                         <label for="phone" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="10 digit Mobile Number">
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="10 digit Mobile Number" required>
+                        <!-- <div class="invalid-feedback">
+                            Please enter your phone number.
+                          </div>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div> -->
                     </div>
                     <div class="col-md-6">
                         <label for="dlnumber" class="form-label">DL Number</label>
@@ -194,7 +230,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="pills-accident" role="tabpanel" aria-labelledby="pills-accident-tab" tabindex="0">
+            <div class="tab-pane fade" id="pills-accidentDetails" role="tabpanel" aria-labelledby="pills-accidentDetails-tab" tabindex="0">
                 <div class="row g-3">
                     <div class="fs-3 border-bottom border-dark py-2 mb-2 fw-light mt-0">
                         Details of Accident / Theft
@@ -362,16 +398,39 @@
                         {% csrf_token %}
                         <button type="submit" class="btn btn-primary">Submit Claim</button>
                     </div>
-                </form>
                 </div>
+            </form>
             </div>
         </div>
-                <!-- ******************** FORM STARTS FROM HERE ************************** -->
-        </div>
+    </div>
+
 </main>
 
 {% endblock body %}
 
+{% block js %}
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+  
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+</script>
+{% endblock js %}
 {% block printstate %}
 <script language="javascript">print_state("sts");</script>
 {% endblock printstate %}

@@ -34,7 +34,7 @@
                 <ul class="nav nav-pills col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                     <li class="nav-item"><a href="/" class="nav-link px-3 link-dark{% block homeActive %}{% endblock homeActive %}">Home</a></li>
                     <li class="nav-item"><a href="/ananta_insurance/claim_form" class="nav-link px-3 link-dark{% block claimActive %}{% endblock claimActive %}">Claim</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-3 link-dark{% block faqsActive %}{% endblock faqsActive %}">FAQs</a></li>
+                    <li class="nav-item"><a href="/ananta_insurance/dashboard" class="nav-link px-3 link-dark{% block dashboardActive %}{% endblock dashboardActive %}">Dashboard</a></li>
                     <li class="nav-item"><a href="/contact" class="nav-link px-3 link-dark{% block contactActive %}{% endblock contactActive %}">Contact</a></li>
                     <li class="nav-item"><a href="/about" class="nav-link px-3 link-dark{% block aboutActive %}{% endblock aboutActive %}">About</a></li>
                 </ul>
@@ -171,7 +171,7 @@
         </div>
     </section>
     <!-- footer ends  -->
-
+    {% block js %}{% endblock js %}
     <!-- JavaScript Bundle with Popper -->
     {% block printstate %}{% endblock printstate %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
