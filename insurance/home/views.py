@@ -70,7 +70,7 @@ def handleLogin(request):
         user = authenticate(username=loginemail, password=loginpass)
         if user is not None:
             login(request, user)
-            return redirect('/')
+            return redirect('/ananta_insurance/claim_form')
         else:
             return render(request, "home/login.html")
     return render(request, "home/login.html")
