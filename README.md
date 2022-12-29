@@ -18,7 +18,7 @@ Install python modules from requirements.txt into the virtual env.
 
 Run the following command -
 ```
-pip instal -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Ensure that the Django settings.py file has correct database configuration. i.e.
@@ -37,6 +37,31 @@ DATABASES = {
 Open command prompt or powershell and go to your project directory.
 
 Make sure you're in insurance directory containing manage.py file.
+
+Create a schema named ananta_insurane inside the root user.
+
+Run the following command,
+```
+Python manage.py makemigrations
+```
+```
+Python manage.py migrate
+```
+
+Then create a Django superuser.
+```
+python manage.py createsuperuser
+```
+Enter your username password and press y
+
+Then,
+Run the following command,
+```
+python manage.py loaddata auth_data.json
+```
+```
+python manage.py loaddata data.json
+```
 
 Run the following command - (Make sure you're using your virtual env python interpreter)
 ```
